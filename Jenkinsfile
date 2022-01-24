@@ -15,13 +15,6 @@ pipeline {
 sh \'passwd aruktest\'
 sh \'passwd -e aruktest\'
 sh \'chage -m 7 -M 90 aruktest\'
-
-sh \'if id aruktest >/dev/null 2>&1; then
-        echo  "aruktest created to home dir"
-else
-        echo  "aruktest does not exist"
-fi\'
-
 sh \'usermod -a -G qadb aruktest\''''
       }
     }
