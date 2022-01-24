@@ -3,12 +3,7 @@ pipeline {
   stages {
     stage('\'Logging in\'') {
       steps {
-        sh '''remote.user = "jenkins"
-remote.identityFile = "/home/jenkins/agent/.ssh/jenkins_agent_key"
-
-def REMOTE_SERVER = "192.168.157.10"
-def REMOTE_USER = "jenkins"
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/jenkins/agent/.ssh/jenkins_agent_key jenkins@192.168.157.10 hostname
+        sh '''ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/jenkins/agent/.ssh/jenkins_agent_key jenkins@192.168.157.10 hostname
 
 '''
       }
