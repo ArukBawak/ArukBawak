@@ -11,13 +11,13 @@ sh \'passwd $user12\'
 sh \'passwd -e $user\'
 sh \'chage -m 7 -M 90 $user\'
 
-if id "$user" >/dev/null 2>&1; then
+sh \'if id "$user" >/dev/null 2>&1; then
         echo  "$user created to home dir"
 else
         echo  "$user does not exist"
-fi
+fi\'
 
-usermod -a -G qadb $user
+sh \'usermod -a -G qadb $user\'
 '''
       }
     }
