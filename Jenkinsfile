@@ -11,7 +11,7 @@ pipeline {
 
     stage('add user') {
       steps {
-        sh '''sh  \'useradd -m aruktest
+        sh '''sh  \'useradd -m aruktest\'
 sh \'passwd aruktest\'
 sh \'passwd -e aruktest\'
 sh \'chage -m 7 -M 90 aruktest\'
